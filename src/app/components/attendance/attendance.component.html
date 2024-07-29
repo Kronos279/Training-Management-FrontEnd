@@ -1,0 +1,54 @@
+
+<div class="container">
+  <div class="heading">
+    <h1>Attendance tracking</h1>
+  </div>
+  <div class="mark-btn">
+    <button class="btn btn-primary markin" (click)="openMarkInModal()">Mark In</button>
+    <button class="btn btn-primary markout" (click)="openMarkOutModal()">Mark Out</button>
+  </div>
+
+  <div class="leave-table">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th>Employee ID</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>In Time</th>
+          <th>Out Time</th>
+          <th>Supervisor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendance of allAttendance | paginate: { itemsPerPage: 5, currentPage: p }">
+          <td>{{attendance.employeeId}}</td>
+          <td>{{email}}</td>
+          <td>{{attendance.date}}</td>
+          <td>{{attendance.inTime}}</td>
+          <td>{{attendance.outTime}}</td>
+          <td>Harsh Singh</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+  <!-- Mark In Modal -->
+  <div *ngIf="showMarkInModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeMarkInModal()">&times;</span>
+      <webcam [trigger]="triggerObservable" (imageCapture)="handleMarkIn($event)"></webcam>
+      <button class="btn btn-primary" (click)="triggerSnapshot()">Take Picture</button>
+    </div>
+  </div>
+
+  <!-- Mark Out Modal -->
+  <div *ngIf="showMarkOutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeMarkOutModal()">&times;</span>
+      <webcam [trigger]="triggerObservable" (imageCapture)="handleMarkOut($event)"></webcam>
+      <button class="btn btn-primary" (click)="triggerSnapshot()">Take Picture</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #eceff1; /* Material Grey 100 */
+}
+
+.mentee-dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Added margin for the navbar */
+}
+
+.search-bar {
+  grid-column: 1 / -1; /* Span the search bar across all columns */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.heading {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 30px;
+  color: #007bff;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.search-bar input {
+  width: 400px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+.profile-section {
+  background: #ffffff; /* White */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Reduced padding */
+  width: calc(100% - 30px); /* Adjusted width to fit two cards with equal spacing */
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer; /* Indicates the card is clickable */
+}
+
+.profile-section:hover {
+  transform: scale(1.02); /* Slightly enlarge the card on hover */
+}
+
+.profile-photo {
+  height: 80px; /* Profile photo size */
+  width: 80px; /* Profile photo size */
+  border-radius: 50%;
+  margin-right: 20px; /* Space between photo and details */
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.profile-info h2 {
+  font-size: 18px; /* Adjust font size if needed */
+  font-weight: 700;
+  margin-bottom: 5px; /* Reduced margin */
+}
+
+.profile-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-details p {
+  font-size: 15.5px;
+  margin-bottom: 3px; /* Reduced margin */
+  flex: 1 1 calc(50% - 20px);
+}

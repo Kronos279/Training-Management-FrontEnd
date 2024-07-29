@@ -1,0 +1,84 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #eceff1; /* Material Grey 100 */
+  font-family: 'Roboto', sans-serif; /* Ensure font is applied to body */
+  font-size: 16px; /* Base font size */
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.heading h2 {
+  font-size: 1.5rem; /* 24px */
+  color: #007bff;
+  font-weight: 700;
+}
+
+.add-announcement-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff; /* White */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.announcement-textarea {
+  width: 500px; /* Ensure the form field takes full width */
+   /* Limit the maximum width of the form field */
+}
+
+.text-input {
+  width: 100%;
+}
+
+.text-input textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submit-button button,
+.close-button button {
+  background: #1e88e5; /* Material Blue 600 */
+  color: #ffffff; /* White */
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.close-button button {
+  background: #e53935; /* Material Red 600 */
+}
+
+button:hover {
+  opacity: 0.9;
+}

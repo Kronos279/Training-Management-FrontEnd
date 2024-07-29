@@ -1,0 +1,86 @@
+<div class="dashboard">
+  <div class="left-section">
+    <div class="profile">
+      @if(mentee){
+      <img [src]="'data:image/png;base64,' + mentee.image.data" alt="Profile Picture">
+      <h2>{{ mentee.employeeFirstName }} {{ mentee.employeeLastName }}</h2>
+      <div class="icon-text-wrapper">
+        <div class="icon-text">
+          <fa-icon [icon]="faEnvelope"></fa-icon> Email: <span style="margin-left: 25px;"></span> {{ mentee.employeeEmail }}
+        </div>
+        <div class="icon-text">
+          <fa-icon [icon]="faGraduationCap"></fa-icon>Grade:<span style="margin-left: 22px;"></span> {{ mentee.employeeGrade }}
+        </div>
+        <div class="icon-text">
+          <fa-icon [icon]="faVenusMars"></fa-icon>Gender:<span style="margin-left: 14px;"></span> {{ mentee.employeeGender }}
+        </div>
+        <div class="icon-text">
+          <fa-icon [icon]="faBirthdayCake"></fa-icon> Birth Date:<span style="margin-left: 2px;"></span> {{ mentee.employeeBirthDate }}
+        </div>
+        <div class="icon-text">
+          <fa-icon [icon]="faCalendar"></fa-icon> Joining Date:<span style="margin-left: -15px;"></span> {{ mentee.employeeJoiningDate }}
+        </div>
+        <div class="icon-text">
+          <fa-icon [icon]="faUsers"></fa-icon> Batch: <span style="margin-left: 26px;"></span> {{ mentee.batchId }}
+        </div>
+      </div>
+      <div class="attendance-button">
+        <button (click)="markAttendance()" mat-raised-button color="accent">Mark Attendance</button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="courses">
+      @for(course of courses; track trackByCourseId){
+      <div class="course-card" [style.background]="getCompletionColor(course)">
+        <button class="course-dropdown" (click)="openDialog(course)">
+          <h3>{{ course.courseName }}</h3>
+        </button>
+      </div>
+      }
+    </div>
+
+
+    <div class="chatbot-section">
+      <h3>Ask ChatBot a Question</h3>
+      <form (submit)="askChatbot()">
+        <div class="input-container">
+          <textarea [(ngModel)]="userPrompt" name="userPrompt" placeholder="Enter your question"></textarea>
+          <button type="submit">Ask</button>
+        </div>
+      </form>
+      <div class="chatbot-response" *ngIf="responseContent">
+        <div class="scrollable-box-chatbot">
+          <pre>{{ responseContent }}</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="updates-chatbot-container">
+      <div class="daily-updates">
+        <h3>Daily Updates</h3>
+        <form (submit)="addUpdate()">
+          <div class="input-container">
+            <textarea name="newUpdateText" [(ngModel)]="newUpdateText" placeholder="Enter your update" rows="3"></textarea>
+            <button type="submit">Add Update</button>
+          </div>
+        </form>
+        <div class="previous-updates">
+          <div class="scrollable-box">
+            <ul>
+              <li *ngFor="let update of dailyUpdates; trackBy: trackByIndex">
+                <span>{{ update.date }}: </span>
+                <span>{{ update.status === 'MISSED' ? 'MISSED' : update.updateText }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

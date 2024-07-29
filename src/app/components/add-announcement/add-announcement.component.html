@@ -1,0 +1,21 @@
+<div class="heading">
+  <h2>Add Announcement</h2>
+</div>
+<form class="add-announcement-form">
+  <mat-form-field appearance="fill" class="announcement-textarea">
+    <mat-label>Announcement Text</mat-label>
+    <div class="text-input">
+      <textarea placeholder="Enter your announcement here" [(ngModel)]="announcementText"
+        name="announcementText" required></textarea>
+    </div>
+  </mat-form-field>
+
+  <div class="button-container">
+    <div class="submit-button">
+      <button (click)="submit()">Submit</button>
+    </div>
+    <div class="close-button">
+      <button (click)="closeDialog()">Close</button>
+    </div>
+  </div>
+</form>

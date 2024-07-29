@@ -1,0 +1,29 @@
+<!-- <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button> -->
+
+<div class="dialog-header">
+  @if(course){
+  <h1 mat-dialog-title>Topics for {{ course.courseName }}</h1>
+  <button mat-icon-button class="close-icon" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</div>
+<div mat-dialog-content>
+  <div class="subcourses" *ngIf="course && course.subCourses">
+    <ol>
+      <li *ngFor="let subCourse of course.subCourses; let i = index">
+        <div class="subcourse-item">
+          <div class="subcourse-info">
+            <span class="subcourse-name">{{ subCourse.subCourseName }}</span>
+            <span class="subcourse-status">{{ subCourse.status }}</span>
+          </div>
+          <button class="mat-raised" mat-raised-button color="primary" (click)="toggleSubCourseStatus(subCourse)">
+            {{ getSubCourseStatus(subCourse.status) }}
+          </button>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>

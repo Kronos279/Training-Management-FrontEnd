@@ -1,0 +1,152 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #eceff1; /* Material Grey 100 */
+}
+
+.dashboard-container {
+  display: flex;
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background: #263238; /* Material Blue Grey 900 */
+  height: 100vh;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  color: #ffffff; /* White */
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff; /* White */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text within the container */
+  background: #cfd8dc; /* Material Blue Grey 200 */
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #37474f; /* Material Blue Grey 800 */
+  font-weight: 700; /* Bold font weight */
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.stat-box {
+  background: #eceff1; /* Material Grey 100 */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h2, .stat-box h3 {
+  color: #37474f; /* Material Blue Grey 800 */
+}
+
+.batches {
+  margin-top: 20px;
+}
+
+.batches table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff; /* White */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.batches th, .batches td {
+  padding: 15px;
+  text-align: left;
+}
+
+.batches th {
+  background: #cfd8dc; /* Material Blue Grey 200 */
+  color: #37474f; /* Material Blue Grey 800 */
+}
+
+.batches td {
+  border-bottom: 1px solid #eceff1; /* Material Grey 100 */
+}
+
+.batches td:last-child {
+  text-align: center;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.status.active {
+  background: #4caf50; /* Material Green 500 */
+  color: #ffffff; /* White */
+}
+
+.status.inactive {
+  background: #f44336; /* Material Red 500 */
+  color: #ffffff; /* White */
+}
+
+button {
+  background: #1e88e5; /* Material Blue 600 */
+  color: #ffffff; /* White */
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1565c0; /* Material Blue 700 */
+}

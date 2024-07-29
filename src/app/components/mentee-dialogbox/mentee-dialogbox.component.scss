@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #eceff1; /* Material Grey 100 */
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px;
+}
+
+.close-button {
+  font-size: 18px;
+}
+
+.profile {
+  background: #ffffff; /* White */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-name {
+  text-align: left;
+}
+
+h2 {
+  font-size: 24px;
+  color: #37474f; /* Material Blue Grey 800 */
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.profile-detail-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #607d8b; /* Material Blue Grey 600 */
+}
+
+.profile-detail-item fa-icon {
+  margin-right: 10px;
+  color: #007bff; /* Material Blue 500 */
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.daily-updates {
+  background: #ffffff; /* White */
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  overflow-y: auto;
+}
+
+.daily-updates h3 {
+  font-size: 20px;
+  color: #37474f; /* Material Blue Grey 800 */
+  margin-bottom: 20px;
+}
+
+.updates-container {
+  height: calc(100% - 40px); /* Subtracting the height of the header */
+}
+
+.update {
+  background: #eceff1; /* Material Grey 100 */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.update p {
+  font-size: 16px;
+  color: #607d8b;
+}
+
+.update strong {
+  color: #37474f; /* Material Blue Grey 800 */
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff; /* White */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  width: 90%;
+}

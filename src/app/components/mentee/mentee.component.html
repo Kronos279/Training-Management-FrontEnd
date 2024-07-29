@@ -1,0 +1,49 @@
+<!-- <div class="mentee-dashboard">
+  <div class="heading">
+    <h1 >Batch participants</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search by name, employee ID, or email" [(ngModel)]="searchTerm"
+      (input)="filterEmployees()" />
+  </div>
+  @for(selectedEmployee of filteredEmployees;track $index){
+
+  <div class="profile-section">
+    <img [src]="employeePhotos[selectedEmployee.employeeId]" alt="Mentee Photo" class="profile-photo">
+    <div class="profile-info">
+      <h2>{{ selectedEmployee?.employeeFirstName }} {{ selectedEmployee?.employeeLastName }}</h2>
+      <div class="profile-details">
+        <p>Employee Id: {{ selectedEmployee?.employeeId }}</p>
+        <p>Gender: {{selectedEmployee?.employeeGender}}</p>
+        <p>Email: {{ selectedEmployee?.employeeEmail }}</p>
+        <p>Grade: {{selectedEmployee?.employeeGrade}}</p>
+      </div>
+    </div>
+  </div>
+  }
+</div> -->
+<div class="mentee-dashboard">
+  <div class="heading">
+    <h1>Batch Participants</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search by name, employee ID, or email" [(ngModel)]="searchTerm"
+      (input)="filterEmployees()" />
+  </div>
+  @for(selectedEmployee of filteredEmployees;track $index){
+  <div>
+    <div class="profile-section card" (click)="openDialog(selectedEmployee)">
+      <img [src]="employeePhotos[selectedEmployee.employeeId]" alt="Mentee Photo" class="profile-photo">
+      <div class="profile-info">
+        <h2>{{ selectedEmployee?.employeeFirstName }} {{ selectedEmployee?.employeeLastName }}</h2>
+        <div class="profile-details">
+          <p>Employee Id: {{ selectedEmployee?.employeeId }}</p>
+          <p>Gender: {{ selectedEmployee?.employeeGender }}</p>
+          <p>Email: {{ selectedEmployee?.employeeEmail }}</p>
+          <p>Grade: {{ selectedEmployee?.employeeGrade }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

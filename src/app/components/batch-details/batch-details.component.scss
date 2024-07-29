@@ -1,0 +1,142 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #eceff1; /* Material Grey 100 */
+  font-family: 'Roboto', sans-serif; /* Ensure font is applied to body */
+  font-size: 16px; /* Base font size */
+}
+
+.batch-container {
+
+  padding-top: 60px; /* To ensure content is below the navbar */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.card {
+  background: #ffffff; /* White */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.batch-details-card {
+
+  margin-bottom: 20px;
+  text-align: center; /* Center text within the card */
+}
+
+.batch-details-card h1 {
+  padding-top: 15px;
+  font-size: 2rem; /* 24px */
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.batch-info {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 600px; /* Limit the width of the grid */
+  text-align: start;
+}
+
+.grid-item {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 10px;
+  color: #37474f;
+}
+.heading{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+.loading p {
+  font-size: 1rem; /* 16px */
+  color: #666;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart-box {
+  width: calc(50% - 10px);
+  height: 300px;
+}
+
+.announcements {
+  margin-top: 20px;
+}
+
+.announcements h2 {
+  align-self: center;
+  text-align: center;
+  font-size: 1.5rem; /* 20px */
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; // Adjust as needed
+}
+
+
+.announcements ul {
+  font-size: 1.05rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.announcements li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.announcements li strong {
+  display: inline-block;
+  width: 120px;
+  color: #37474f;
+}
+
+.mentee-section {
+  margin-top: 20px;
+}
+
+button {
+  background: #1e88e5; /* Material Blue 600 */
+  color: #ffffff; /* White */
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1565c0; /* Material Blue 700 */
+}

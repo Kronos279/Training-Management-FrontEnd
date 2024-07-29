@@ -1,0 +1,53 @@
+<div class="batch-container">
+  <div class="batch-details-card card">
+    <ng-container *ngIf="batch; else loading">
+      <div class="batch-info">
+        <div class="grid">
+          <div class="heading">
+            <h1>Batch Details</h1>
+          </div>
+
+          <div class="grid-item"><strong>Batch ID:</strong> {{ batch.batchId }}</div>
+          <div class="grid-item"><strong>Mentor ID:</strong> {{ batch.mentorId }}</div>
+          <div class="grid-item"><strong>Start Date:</strong> {{ batch.startDate }}</div>
+          <div class="grid-item"><strong>End Date:</strong> {{ batch.endDate || 'N/A' }}</div>
+          <div class="grid-item"><strong>Status:</strong> {{ batch.status }}</div>
+          <div class="grid-item"><strong>Description:</strong> {{ batch.description || 'No description provided' }}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+
+    <ng-template #loading>
+      <div class="loading">
+        <p>Loading batch details...</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="charts-container">
+    <div class="chart-box card">
+      <app-doughnut-chart></app-doughnut-chart>
+    </div>
+    <div class="chart-box card">
+      <app-taskflow-chart></app-taskflow-chart>
+    </div>
+  </div>
+
+  <div class="announcements card">
+    <h2>Announcements</h2>
+    <ul>
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="addAnnouncement()">Add Announcement</button>
+      </div>
+      <li *ngFor="let announcement of announcements">
+        <strong>{{ announcement.creationDate }}</strong>: {{ announcement.announcement }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="mentee-section card">
+    <app-mentee></app-mentee>
+  </div>
+</div>

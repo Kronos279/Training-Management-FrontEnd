@@ -1,0 +1,51 @@
+<div class="dialog-header">
+  <button mat-raised-button color="warn" class="close-button" (click)="close()">X</button>
+</div>
+<div class="profile">
+  <div class="profile-header">
+    <img *ngIf="mentee" [src]="'data:image/png;base64,' + mentee.image.data" alt="Profile Picture" class="profile-picture">
+    <div class="profile-name">
+      <h2>{{ mentee?.employeeFirstName }} {{ mentee?.employeeLastName }}</h2>
+    </div>
+  </div>
+  <div class="profile-details">
+    <div class="profile-detail-item">
+      <fa-icon [icon]="faEnvelope"></fa-icon>
+      <span>{{ mentee?.employeeEmail }}</span>
+    </div>
+    <div class="profile-detail-item">
+      <fa-icon [icon]="faGraduationCap"></fa-icon>
+      <span>Grade: {{ mentee?.employeeGrade }}</span>
+    </div>
+    <div class="profile-detail-item">
+      <fa-icon [icon]="faVenusMars"></fa-icon>
+      <span>Gender: {{ mentee?.employeeGender }}</span>
+    </div>
+    <div class="profile-detail-item">
+      <fa-icon [icon]="faBirthdayCake"></fa-icon>
+      <span>Birth Date: {{ mentee?.employeeBirthDate }}</span>
+    </div>
+    <div class="profile-detail-item">
+      <fa-icon [icon]="faCalendar"></fa-icon>
+      <span>Joining Date: {{ mentee?.employeeJoiningDate | date: 'dd-MM-yyyy' }}</span>
+    </div>
+    <div class="profile-detail-item">
+      <fa-icon [icon]="faUsers"></fa-icon>
+      <span>Batch: {{ mentee?.batchId }}</span>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="daily-updates">
+    <h3>Daily Updates</h3>
+    <div class="updates-container">
+      <div *ngFor="let update of dailyUpdates" class="update">
+        <p><strong>{{ update.date | date: 'dd-MM-yyyy' }}</strong></p>
+        <p>{{ update.updateText }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="chart-container">
+    <canvas #doughnutChart></canvas>
+  </div>
+</div>
